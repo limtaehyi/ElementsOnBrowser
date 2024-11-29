@@ -4,7 +4,7 @@
   "version": "1.0",
   "permissions": ["storage","activeTab"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "js/background.js"
   },
   "action": {
     "default_popup": "popup.html",
@@ -19,7 +19,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["interact.min.js", "content.js"]
+      "js": ["js/interact.min.js", "js/content.js"]
     }
   ]
 }

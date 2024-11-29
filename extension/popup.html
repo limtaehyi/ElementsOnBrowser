@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>Draggable Image Extension</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="./html2canvas.min.js"></script>
-    <script src="./interact.min.js"></script>
-    <script src="popup.js" defer></script>
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/interact.min.js"></script>
+    <script src="js/popup.js" defer></script>
 
     <style>
         #blocker {
-            text-align: center;
             display: flex;
+            text-align: center;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -44,7 +44,7 @@
         }
         #info {
             font-weight: bold;
-            color: red; /* 강조 색상 */
+            color: red;
         }
     </style>
 </head>
@@ -64,7 +64,7 @@
         <p id="info">아무 곳이나 눌러 시작하세요.</p>
     </div>
 
-    <div id="content" class="d-flex justify-content-center align-items-center">
+    <div id="content" class="justify-content-center align-items-center">
         <div id="main-container" class="container mt-3">
             <button id="add-button" class="btn btn-primary">+</button>
         </div>

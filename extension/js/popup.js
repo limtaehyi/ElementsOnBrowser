@@ -18,19 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
         chrome.storage.local.get(['blockerVisible'], (result) => {
             if (result.blockerVisible === false) {
                 blocker.style.display = 'none'; 
-                content.style.display = 'block';
+                content.style.display = 'flex';
             }
         });
     }
 
     blocker.addEventListener('click', function() {
         if (!isContentLoaded) {
-            alert("Adblock Plus를 꺼주세요.");
+            alert("Adblock이나 광고 차단 프로그램을 꺼주세요.");
             return;
         }
 
-        blocker.style.display = 'none'; 
-        content.style.display = 'block';
+        blocker.style.display = 'none';
+        content.style.display = 'flex';
         saveBlockerState(false);
     });
 
