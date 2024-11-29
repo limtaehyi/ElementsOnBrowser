@@ -1,14 +1,73 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" style="width:600px; height:460px;">
 <head>
     <meta charset="UTF-8">
     <title>Draggable Image Extension</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="./html2canvas.min.js"></script>
+    <script src="./interact.min.js"></script>
     <script src="popup.js" defer></script>
+
+    <style>
+        #blocker {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 600px;
+            height: 460px;
+        }
+        #content {
+            display: none;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        .draggable {
+            border: 1px solid transparent;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: border 0.3s;
+        }
+        .draggable:hover {
+            border: 1px solid #007bff;
+        }
+        .resize-handle {
+            width: 10px;
+            height: 10px;
+            background: blue;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            cursor: se-resize;
+        }
+        #info {
+            font-weight: bold;
+            color: red; /* 강조 색상 */
+        }
+    </style>
 </head>
+
 <body>
-    <div id="main-container" class="container mt-3">
-        <button id="add-button" class="btn btn-primary">+</button>
+    <div id="blocker">
+        <img src="img/srcode48.png" id="startbrush" alt="아이콘 설명">
+        <h5>ElementsOnBrowser</h5>
+        <h6>사용방법</h6>
+        <div id="howto" class="text-center">
+            <h6>1. input에 HTML 코드를 넣거나 이미지 파일을 선택합니다.</h6>
+            <h6>2. <b>회색 V</b> 버튼을 클릭하여 현재 탭에 띄웁니다.</h6>
+            <h6>3. 요소의 <b>우측 하단</b>을 통해 요소의 크기를 조절할 수 있습니다.</h6>
+            <h6>4. 요소를 <b>마우스 우클릭</b>하면 요소가 삭제됩니다.</h6>
+        </div>
+        <h6 class="mt-4 text-danger"><b>Adblock이나 광고 차단 확장 프로그램을 사용하는 경우<br>정상적으로 작동하지 않을 수 있습니다.</b></h6>
+        <p id="info">아무 곳이나 눌러 시작하세요.</p>
+    </div>
+
+    <div id="content" class="d-flex justify-content-center align-items-center">
+        <div id="main-container" class="container mt-3">
+            <button id="add-button" class="btn btn-primary">+</button>
+        </div>
     </div>
 </body>
 </html>

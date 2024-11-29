@@ -1,24 +1,25 @@
 {
   "manifest_version": 3,
-  "name": "Your Extension Name",
+  "name": "ElementsOnBrowser",
   "version": "1.0",
-  "permissions": ["activeTab"],
+  "permissions": ["storage","activeTab"],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
     "default_popup": "popup.html",
     "default_icon":{
-      "32":"img/cloud32.png",
-      "48":"img/cloud48.png",
-      "64":"img/cloud64.png",
-      "96":"img/cloud32.png"
+      "32":"img/srcode32.png",
+      "48":"img/srcode48.png",
+      "64":"img/srcode64.png",
+      "96":"img/srcode96.png",
+      "128":"img/srcode128.png"
     }
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["interact.min.js", "content.js"]
     }
   ]
 }
